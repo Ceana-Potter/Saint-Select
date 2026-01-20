@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire: Who Are You</title>
+    <link rel="stylesheet" href="../../css/questionnaire.css">
+</head>
+<body>
+    <div class="page-frame">
+        <div class="side side--left"></div>
+        <main class="content">
+            <h1 class="questionnaire-heading">LET’S FIND A ROOMMATE!</h1>
+            <h2 class="questionnaire-subheading">ENTER THE DETAILS THAT YOU WOULD LIKE TO SHARE ABOUT YOURSELF</h2>
+            <!--Create a progress bar graphical component and insert here-->
+            <hr class="questionnaire-divider">
+            <h1 class="questionnaire-heading">STEP 1: WHO ARE YOU?</h1>
+            <div class="questionnaire-row">
+                <label class="questionnaire-row-label" for="firstName">FIRST NAME</label>
+                <input id="firstName" class="questionnaire-input" type="text" placeholder="First Name" />
+            </div>
+            <div class="questionnaire-row">
+                <label class="questionnaire-row-label" for="lastName">LAST NAME</label>
+                <input id="lastName" class="questionnaire-input" type="text" placeholder="Last Name" />
+            </div>
+            <div class="questionnaire-row">
+                <label class="questionnaire-row-label" for="nickName">NICKNAME</label>
+                <input id="nickName" class="questionnaire-input" type="text" placeholder="Nickname / Preferred Name" />
+            </div>
+            <hr class="questionnaire-subdivider">
+            <h2 class="questionnaire-subheading" style="text-align: left; margin-bottom: -15px;">UPLOAD A PROFILE PICTURE</h2>
+            <h3 class="questionnaire-description">OR ADD ONE LATER</h3>
+            <!--Create an upload image graphical component and insert here-->
+            <hr class="questionnaire-subdivider">
+            <h2 class="questionnaire-subheading" style="text-align: left; margin-bottom: -15px">BIOGRAPHY</h2>
+            <h3 class="questionnaire-description">THIS WILL BE SHOWN TO OTHERS WHEN YOU APPEAR IN THEIR SUGGESTED MATCHES</h3>
+            <div class="questionnaire-row questionnaire-row--solo">
+                <textarea id="biography" class="questionnaire-input questionnaire-textarea" placeholder="Enter a short biography"></textarea>
+            </div>
+            <hr class="questionnaire-subdivider">
+            <h2 class="questionnaire-subheading" style="text-align: left">ACADEMIC INFORMATION</h2>
+            <!--Need to add dealbreaker option-->
+            <div class="questionnaire-row">
+                <label class="questionnaire-row-label" for="studentMajor">MAJOR</label>
+                <input id="studentMajor" class="questionnaire-input" type="text" placeholder="Academic Major" />
+            </div>
+            <div class="questionnaire-row">
+                <label class="questionnaire-row-label" for="studentTrack">TRACK</label>
+                <input id="studentMajorTrack" class="questionnaire-input" type="text" placeholder="Major Track" />
+            </div>
+            <div class="questionnaire-row">
+                <label class="questionnaire-row-label" for="studentMinor">MINOR</label>
+                <input id="studentMinor" class="questionnaire-input" type="text" placeholder="Academic Minor" />
+            </div>
+            <hr class="questionnaire-subdivider">
+            <h2 class="questionnaire-subheading" style="text-align: left; margin-bottom: -15px">ATHLETE STATUS</h2>
+            <h3 class="questionnaire-description">SELECT ALL THAT ARE APPLICABLE</h3>
+            <!--Need to add dealbreaker option-->
+            <div class="radio-options">
+                <label class="radio-option">
+                    <span class="radio-text">ATHLETE</span>
+                    <input class="radio-input" type="radio" name="athleteStatus" value="athlete">
+                    <span class="radio-control" aria-hidden="true"></span>
+                </label>
+
+                <label class="radio-option">
+                    <span class="radio-text">NON-ATHLETE</span>
+                    <input class="radio-input" type="radio" name="athleteStatus" value="non-athlete">
+                    <span class="radio-control" aria-hidden="true"></span>
+                </label>
+            </div>
+
+
+        </main>
+        <div class="side side--right"></div>
+  </div>
+</body>
+</html>
