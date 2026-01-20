@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+
+/* Base reset */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout: left gutter | content | right gutter */
+.page-frame {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #ffffff;
+}
+
+.side {
+  background: #006b54;
+  flex: 0 0 clamp(24px, 6vw, 96px);
+}
+
+.content {
+  flex: 1;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* Typography */
+.questionnaire-heading {
+  white-space: nowrap;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #006b54;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.questionnaire-subheading {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(20px, 3.5vw, 32px);
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+  margin: 0 0 2rem;
+}
+
+/* Divider line */
+.questionnaire-divider {
+  width: min(650px, 100%);
+  border: 0;
+  border-top: 2px solid #006b54;
+  margin: 2rem auto;
+}
+
+/* Form rows: label + input inline */
+.questionnaire-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Row label should match "subheading" size */
+.questionnaire-row-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(20px, 3.5vw, 32px);
+  font-weight: 400;
+  color: #000000;
+  text-align: left;
+  margin: 0;
+  min-width: 180px;
+  text-transform: uppercase;
+}
+
+/* Inputs (responsive; caps at your Figma-like size) */
+.questionnaire-input {
+  width: clamp(240px, 45vw, 383px);
+  height: clamp(28px, 4vh, 30px);
+  padding: 0 0.5rem;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  border: 1px solid #cfc9c4;
+  border-radius: 0;
+  outline: none;
+  color: #000000;
+  background-color: #ffffff;
+
+  transition: border-color 0.2s ease, border-radius 0.2s ease;
+}
+
+.questionnaire-input::placeholder {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #cfc9c4;
+}
+
+.questionnaire-input:focus {
+  border-color: #000000;
+  border-radius: 3px;
+}
+
+/* Optional: reusable description text */
+.questionnaire-description {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #cfc9c4;
+  /* margin-top: 0; */
+  /* margin-bottom: 1rem; */
+}
+
+.questionnaire-subdivider {
+  width: min(500px, 100%);
+  border: 0;
+  border-top: 2px solid #cfc9c4; /* same as questionnaire-description text */
+  margin: 1.5rem auto;
+}
+
+/* Solo row (no label) */
+.questionnaire-row--solo {
+  justify-content: center;
+}
+
+/* Textarea variant (final intended version) */
+.questionnaire-textarea {
+  width: clamp(240px, 45vw, 383px);  /* SAME as text input */
+  height: clamp(70px, 12vh, 82px);   /* Figma height, responsive */
+  padding: 0.75rem;
+
+  resize: vertical;   /* or 'none' if you want it locked */
+  line-height: 1.3;
+}
+
+/* Layout for the options */
+.radio-options {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;              /* space between the two options */
+  margin: 1.5rem 0;
+}
+
+/* Each option: text above, circle below, centered */
+.radio-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Text above */
+.radio-text {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Hide the native radio but keep it accessible */
+.radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+/* Outer ring: 20x20, 1px black */
+.radio-control {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: grid;
+  place-items: center; /* centers the dot */
+  box-sizing: border-box;
+}
+
+/* Checked dot: 16x16, green fill, 1px black stroke */
+.radio-input:checked + .radio-control::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: #006b54;
+  border: 1px solid #000;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+/* Keyboard focus (recommended). This does NOT change your Figma look unless tabbing */
+.radio-input:focus-visible + .radio-control {
+  outline: 2px solid rgba(0, 107, 84, 0.35);
+  outline-offset: 3px;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  display: none;
+}
+
+/* Continue button (merged blocks, final behavior preserved) */
+.questionnaire-continue {
+  width: clamp(180px, 40vw, 224px);
+  height: clamp(56px, 12vh, 70px);
+  margin: 2rem auto 0;
+  display: block;
+
+  background-color: #ffc423;
+  border: none;
+  border-radius: 10px;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(26px, 5vw, 35px);
+  font-weight: 700; /* Bold */
+  color: #ffffff;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  /* Button shadow */
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.35);
+
+  /* Text shadow */
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .side {
+    display: none;
+  }
+
+  .content {
+    padding: 2rem 1.25rem;
+  }
+
+  .questionnaire-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .questionnaire-row-label {
+    min-width: unset;
+  }
+
+  .questionnaire-input {
+    width: 100%;
+  }
+
+  .radio-options {
+    gap: 3rem;
+  }
+}
