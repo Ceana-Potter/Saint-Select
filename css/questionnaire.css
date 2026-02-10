@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap');
 
-/* Base reset */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
-/* Layout: left gutter | content | right gutter */
 .page-frame {
   display: flex;
   min-height: 100vh;
@@ -26,7 +26,6 @@ html, body {
   padding: 3rem 2rem;
 }
 
-/* Typography */
 .questionnaire-heading {
   white-space: nowrap;
   font-family: 'Oswald', sans-serif;
@@ -48,7 +47,6 @@ html, body {
   margin: 0 0 2rem;
 }
 
-/* Divider line */
 .questionnaire-divider {
   width: min(650px, 100%);
   border: 0;
@@ -56,7 +54,6 @@ html, body {
   margin: 2rem auto;
 }
 
-/* Form rows: label + input inline */
 .questionnaire-row {
   display: flex;
   align-items: center;
@@ -65,7 +62,6 @@ html, body {
   margin-bottom: 1.5rem;
 }
 
-/* Row label should match "subheading" size */
 .questionnaire-row-label {
   font-family: 'Oswald', sans-serif;
   font-size: clamp(20px, 3.5vw, 32px);
@@ -77,7 +73,6 @@ html, body {
   text-transform: uppercase;
 }
 
-/* Inputs (responsive; caps at your Figma-like size) */
 .questionnaire-input {
   width: clamp(240px, 45vw, 383px);
   height: clamp(28px, 4vh, 30px);
@@ -108,47 +103,40 @@ html, body {
   border-radius: 3px;
 }
 
-/* Optional: reusable description text */
 .questionnaire-description {
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #cfc9c4;
-  /* margin-top: 0; */
-  /* margin-bottom: 1rem; */
 }
 
 .questionnaire-subdivider {
   width: min(500px, 100%);
   border: 0;
-  border-top: 2px solid #cfc9c4; /* same as questionnaire-description text */
+  border-top: 2px solid #cfc9c4;
   margin: 1.5rem auto;
 }
 
-/* Solo row (no label) */
 .questionnaire-row--solo {
   justify-content: center;
 }
 
-/* Textarea variant (final intended version) */
 .questionnaire-textarea {
-  width: clamp(240px, 45vw, 383px);  /* SAME as text input */
-  height: clamp(70px, 12vh, 82px);   /* Figma height, responsive */
+  width: clamp(240px, 45vw, 383px);
+  height: clamp(70px, 12vh, 82px);
   padding: 0.75rem;
 
-  resize: vertical;   /* or 'none' if you want it locked */
+  resize: vertical;
   line-height: 1.3;
 }
 
-/* Layout for the options */
 .radio-options {
   display: flex;
   justify-content: center;
-  gap: 5rem;              /* space between the two options */
+  gap: 5rem;
   margin: 1.5rem 0;
 }
 
-/* Each option: text above, circle below, centered */
 .radio-option {
   display: flex;
   flex-direction: column;
@@ -158,7 +146,6 @@ html, body {
   user-select: none;
 }
 
-/* Text above */
 .radio-text {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
@@ -168,7 +155,6 @@ html, body {
   text-align: center;
 }
 
-/* Hide the native radio but keep it accessible */
 .radio-input {
   position: absolute;
   opacity: 0;
@@ -177,19 +163,18 @@ html, body {
   pointer-events: none;
 }
 
-/* Outer ring: 20x20, 1px black */
 .radio-control {
   width: 20px;
   height: 20px;
   border: 1px solid #000;
   border-radius: 50%;
   display: grid;
-  place-items: center; /* centers the dot */
+  place-items: center;
+  /* centers the dot */
   box-sizing: border-box;
 }
 
-/* Checked dot: 16x16, green fill, 1px black stroke */
-.radio-input:checked + .radio-control::after {
+.radio-input:checked+.radio-control::after {
   content: "";
   width: 16px;
   height: 16px;
@@ -199,8 +184,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Keyboard focus (recommended). This does NOT change your Figma look unless tabbing */
-.radio-input:focus-visible + .radio-control {
+.radio-input:focus-visible+.radio-control {
   outline: 2px solid rgba(0, 107, 84, 0.35);
   outline-offset: 3px;
 }
@@ -215,7 +199,6 @@ legend {
   display: none;
 }
 
-/* Continue button (merged blocks, final behavior preserved) */
 .questionnaire-continue {
   width: clamp(180px, 40vw, 224px);
   height: clamp(56px, 12vh, 70px);
@@ -228,22 +211,180 @@ legend {
 
   font-family: 'Oswald', sans-serif;
   font-size: clamp(26px, 5vw, 35px);
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
 
   cursor: pointer;
 
-  /* Button shadow */
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.35);
 
-  /* Text shadow */
   text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
 
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* Responsive adjustments */
+/* CHECKBOX PILLS */
+.hobby-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #111;
+
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* hide the checkbox but keep it accessible */
+.hobby-pill input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* selected */
+.hobby-pill:has(input:checked) {
+  background: #FFC423;
+  border-color: #FFC423;
+}
+
+/* keyboard accessibility */
+.hobby-pill:has(input:focus-visible) {
+  outline: 3px solid rgba(255, 196, 35, 0.55);
+  outline-offset: 2px;
+}
+
+/* optional press feel */
+.hobby-pill:active {
+  transform: translateY(1px);
+}
+
+.hobby-pill span {
+  font-family: "Gudea", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.hobby-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 10px;
+  justify-content: center;
+}
+
+/* CSS for Radio Button Sections */
+/* wrapper that gives BOTH rows the same left/right inset */
+.scale-wrap {
+  padding: 0 16px; /* match the old gray bar horizontal padding */
+}
+
+/* shared 2-column layout so both rows line up */
+.scale-label-row,
+.scale-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 1fr;
+  column-gap: 1.5rem;
+}
+
+/* labels row (outside gray bar) */
+.scale-label-row {
+  margin-bottom: 6px;
+  align-items: end;
+}
+
+.scale-labels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;     /* centers text over columns */
+  align-items: end;
+}
+
+.scale-labels .radio-text {
+  white-space: nowrap;
+  font-size: clamp(12px, 2.2vw, 16px);
+}
+
+.label-start  { grid-column: 1; }
+.label-middle { grid-column: 3; }
+.label-end    { grid-column: 5; }
+
+/* gray bar */
+.scale-row {
+  background: #d9d9d9;
+  padding: 14px 0;           /* vertical only now */
+  align-items: center;
+}
+
+/* question text = Merriweather Regular */
+.scale-question {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
+
+/* radios use same 5-col grid as labels */
+.scale-radios {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.scale-radios .radio-option {
+  display: grid;          /* override your flex layout for this context */
+  place-items: center;    /* centers the circle perfectly */
+  width: 100%;
+}
+
+.scale-labels > span {
+  display: flex;
+  justify-content: center;
+}
+
+/* Make label + radio centering identical and pixel-perfect */
+.scale-labels > span {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.scale-radios .radio-option {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.scale-question {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  font-size: clamp(14px, 2.2vw, 16px);
+  line-height: 1.4;
+  color: #000;
+}
+
+.scale-labels .radio-text {
+  font-size: clamp(12px, 2vw, 16px);
+  white-space: nowrap;
+}
+
+.scale-wrap {
+  padding-left: clamp(12px, 3vw, 24px);
+  padding-right: clamp(12px, 3vw, 24px);
+}
+
+/* RESPONSIVE STYLING */
 @media (max-width: 768px) {
   .side {
     display: none;
@@ -269,5 +410,20 @@ legend {
 
   .radio-options {
     gap: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .scale-label-row {
+    grid-template-columns: 1fr;
+  }
+
+  .scale-labels {
+    margin-left: 0;
+  }
+
+  .scale-row {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
   }
 }
