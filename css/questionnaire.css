@@ -324,15 +324,6 @@ legend {
   align-items: center;
 }
 
-/* question text = Merriweather Regular */
-.scale-question {
-  margin: 0;
-  font-family: 'Merriweather', serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #000;
-}
-
 /* radios use same 5-col grid as labels */
 .scale-radios {
   display: grid;
@@ -372,6 +363,7 @@ legend {
   font-size: clamp(14px, 2.2vw, 16px);
   line-height: 1.4;
   color: #000;
+  padding-left: 5%;
 }
 
 .scale-labels .radio-text {
